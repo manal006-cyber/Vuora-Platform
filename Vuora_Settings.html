@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuora | Settings</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/Vuora.css">
+    
+    <link rel="stylesheet" href="css/Settings.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">VUORA</div>
+        <nav class="menu">
+            <a href="Vuora_Dashboard.html" class="menu-item">Overview</a>
+            <a href="Vuora_Projects.html" class="menu-item">Projects</a>
+            <a href="Vuora_Invoices.html" class="menu-item">Invoices</a>
+            <a href="Vuora_Wallet.html" class="menu-item">Wallet</a>
+            <a href="#" class="menu-item active">Settings</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="header-flex">
+            <h1>Settings</h1>
+            <button class="save-btn" onclick="saveSettings()">Save Changes</button>
+        </div>
+
+        <section class="settings-card">
+            <h2>Profile Information</h2>
+            <div class="form-grid">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="userName" value="Liora Ali">
+                </div>
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="userEmail" value="Liora.Ali@gmail.com">
+                </div>
+                <div class="input-group">
+                    <label>Date of Birth</label>
+                    <input type="date" id="userDOB">
+                </div>
+                <div class="input-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="userPhone" placeholder="+966 50 000 0000">
+                </div>
+                <div class="input-group" style="grid-column: span 2;">
+                    <label>Payout Method (IBAN / Card)</label>
+                    <input type="text" id="userCard" placeholder="SA 0000 0000 0000 0000">
+                </div>
+            </div>
+        </section>
+
+        <section class="settings-card">
+            <h2>Preferences</h2>
+            <div class="toggle-row">
+                <div>
+                    <h4 style="margin:0;">Dark Mode</h4>
+                    <p style="margin:5px 0 0; font-size:12px; color:var(--text-light);">Apply theme across the system.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            
+            <div class="toggle-row">
+                <div>
+                    <h4 style="margin:0;">Push Notifications</h4>
+                    <p style="margin:5px 0 0; font-size:12px; color:var(--text-light);">Stay updated on invoice status.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </section>
+
+        <div class="footer-actions">
+            <button class="btn-luxury btn-logout" onclick="window.location.href='Vuora_Login.html'">Sign Out</button>
+            <button class="btn-luxury btn-delete" onclick="toggleModal(true)">Delete Account</button>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal-card">
+            <h3>Permanent Action</h3>
+            <p>Are you sure? Once you delete your account, there is no going back.</p>
+            <div style="display: flex; gap: 15px; margin-top: 20px;">
+                <button class="btn-luxury modal-cancel" onclick="toggleModal(false)">Cancel</button>
+                <button class="confirm-delete-btn" onclick="confirmDelete()">Confirm Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggle = document.getElementById('darkModeToggle');
+        
+        // Initial Theme Check
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            toggle.checked = true;
+        }
+
+        // Theme Toggle Handler
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        function toggleModal(show) {
+            document.getElementById('deleteModal').style.display = show ? 'flex' : 'none';
+        }
+
+        function saveSettings() {
+            alert('Settings updated successfully!');
+        }
+    </script>
+</body>
+</html>

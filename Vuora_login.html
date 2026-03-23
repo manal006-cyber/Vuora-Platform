@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuora | Authenticate</title>
+    <link rel="stylesheet" href="css/Vuora.css">
+    <link rel="stylesheet" href="css/Login.css">
+    
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <div class="login-container fade-in" id="authContainer">
+        <div id="signInForm">
+            <div class="login-card">
+                <div class="logo">VUORA</div>
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Enter your credentials to access your workspace</p>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" id="loginEmail" placeholder="name@vuora.com">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPass" placeholder="••••••••">
+                </div>
+
+                <button class="primary-btn" onclick="goToDashboard()">Sign In</button>
+
+                <button class="google-btn">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/gsa_512dp.png" width="16" alt="G">
+                    Sign in with Google
+                </button>
+            </div>
+            <p class="footer-text">New to Vuora? <span onclick="toggleAuth(true)">Create account</span></p>
+        </div>
+
+        <div id="signUpForm" class="hidden">
+            <div class="login-card">
+                <div class="logo">VUORA</div>
+                <h2>Join the Workspace</h2>
+                <p class="subtitle">Start your 14-day free trial today</p>
+
+                <div style="display: flex; gap: 10px;">
+                    <div class="input-group">
+                        <label>First Name</label>
+                        <input type="text" placeholder="Liora">
+                    </div>
+                    <div class="input-group">
+                        <label>Last Name</label>
+                        <input type="text" placeholder="Ali">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Work Email</label>
+                    <input type="email" placeholder="liora@company.com">
+                </div>
+                <div class="input-group">
+                    <label>Professional Role</label>
+                    <input type="text" placeholder="UI/UX Designer">
+                </div>
+                <div class="input-group">
+                    <label>Create Password</label>
+                    <input type="password" placeholder="••••••••">
+                </div>
+
+                <button class="primary-btn" onclick="goToDashboard()">Create Account</button>
+            </div>
+            <p class="footer-text">Already have an account? <span onclick="toggleAuth(false)">Sign in</span></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleAuth(isSignUp) {
+            const container = document.getElementById('authContainer');
+            const signIn = document.getElementById('signInForm');
+            const signUp = document.getElementById('signUpForm');
+            container.style.opacity = '0';
+            setTimeout(() => {
+                if (isSignUp) {
+                    signIn.classList.add('hidden');
+                    signUp.classList.remove('hidden');
+                } else {
+                    signUp.classList.add('hidden');
+                    signIn.classList.remove('hidden');
+                }
+                container.style.opacity = '1';
+            }, 300);
+        }
+
+        function goToDashboard() {
+            window.location.href = "Vuora_Dashboard.html";
+        }
+    </script>
+</body>
+</html>

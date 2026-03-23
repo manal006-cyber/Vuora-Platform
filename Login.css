@@ -1,0 +1,137 @@
+/* --- Login Page Styles (Strictly Original) --- */
+
+:root {
+    --bg-color: #F9FAFB; 
+    --card-bg: #FFFFFF; 
+    --text-main: #111827;
+    --text-sub: #6B7280; 
+    --accent: #4cc9f0; 
+    --input-bg: #F3F4F6; 
+    --border: #E5E7EB;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0b0f19; 
+    --card-bg: #111827; 
+    --text-main: #F9FAFB;
+    --text-sub: #9CA3AF; 
+    --input-bg: #1f2937; 
+    --border: #374151;
+}
+
+body {
+    margin: 0; 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg-color) !important; /* ضمان اللون الأصلي */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; 
+    color: var(--text-main); 
+    transition: 0.3s; 
+    overflow: hidden;
+}
+
+.login-container { width: 100%; max-width: 420px; padding: 20px; transition: 0.5s ease; }
+
+/* تأثير التلاشي عند التبديل */
+.fade-in { animation: fadeIn 0.5s forwards; }
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.login-card {
+    background: var(--card-bg); 
+    padding: 45px 40px; 
+    border-radius: 32px;
+    border: 1px solid var(--border); 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.logo { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 32px; 
+    font-weight: 700; 
+    color: var(--accent); 
+    margin-bottom: 10px; 
+    letter-spacing: 2px; 
+}
+
+h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px; }
+.subtitle { font-size: 13px; color: var(--text-sub); margin-bottom: 30px; }
+
+.input-group { text-align: left; margin-bottom: 15px; }
+.input-group label { 
+    display: block; 
+    font-size: 11px; 
+    font-weight: 600; 
+    margin-bottom: 6px; 
+    color: var(--text-sub); 
+    text-transform: uppercase; 
+}
+
+.input-group input {
+    width: 100%; 
+    padding: 12px 16px; 
+    border-radius: 12px; 
+    border: 1px solid var(--border);
+    background: var(--input-bg); 
+    color: var(--text-main); 
+    font-size: 14px; 
+    outline: none; 
+    box-sizing: border-box; 
+    transition: 0.3s;
+}
+
+/* لون النص عند التركيز لضمان الوضوح */
+.input-group input:focus { 
+    border-color: var(--accent); 
+    box-shadow: 0 0 0 4px rgba(76, 201, 240, 0.1); 
+    background: var(--card-bg);
+}
+
+/* زر Sign In - لون غامق وواضح */
+.primary-btn {
+    width: 100%; 
+    padding: 14px; 
+    background: #111827; /* اللون الأسود الأصلي */
+    color: #FFFFFF; 
+    border: none; 
+    border-radius: 12px; 
+    font-weight: 600; 
+    cursor: pointer; 
+    margin-top: 10px; 
+    transition: 0.3s;
+}
+
+[data-theme="dark"] .primary-btn {
+    background: #F9FAFB;
+    color: #111827;
+}
+
+.primary-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+/* زر جوجل */
+.google-btn {
+    width: 100%; 
+    padding: 12px; 
+    background: transparent; 
+    color: var(--text-main);
+    border: 1px solid var(--border); 
+    border-radius: 12px; 
+    font-weight: 500;
+    margin-top: 15px; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px; 
+    transition: 0.3s;
+}
+
+.footer-text { margin-top: 25px; font-size: 13px; color: var(--text-sub); text-align: center; }
+.footer-text span { color: var(--accent); cursor: pointer; font-weight: 600; }
+
+.hidden { display: none; }
