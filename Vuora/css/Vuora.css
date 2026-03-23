@@ -1,0 +1,116 @@
+/* Project: Vuora Dashboard (Global Styles)
+    Author: Leora
+*/
+
+/* 1. Design System Variables */
+:root {
+    --bg-main: #F9FAFB;
+    --sidebar-color: #FFFFFF;
+    --accent: #4cc9f0;
+    --text-dark: #111827;
+    --text-light: #6B7280;
+    --card-border: #E5E7EB;
+    --card-bg: #FFFFFF;
+    --danger: #EF4444;
+    --success: #10B981;
+    --input-bg: #FAFAFA;
+    --btn-secondary: #f3f4f6;
+    --save-btn-bg: #111827;
+    --save-btn-text: #FFFFFF;
+    --card-border-radius: 24px;
+}
+
+/* 2. Dark Theme Overrides */
+[data-theme="dark"] {
+    --bg-main: #0b0f19;
+    --sidebar-color: #111827;
+    --text-dark: #f9fafb;
+    --text-light: #9ca3af;
+    --card-border: #374151;
+    --card-bg: #1f2937;
+    --input-bg: #111827;
+    --btn-secondary: #374151;
+    --save-btn-bg: #FFFFFF;
+    --save-btn-text: #111827;
+}
+
+/* 3. Base Elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg-main); 
+    display: flex; 
+    color: var(--text-dark); 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+/* 4. Sidebar Navigation */
+.sidebar { 
+    width: 260px; 
+    height: 100vh; 
+    background: var(--sidebar-color); 
+    border-right: 1px solid var(--card-border); 
+    position: fixed; 
+    padding: 40px 20px; 
+    z-index: 100;
+}
+
+.sidebar-logo { 
+    font-family: 'Playfair Display', serif; 
+    font-size: 28px; 
+    color: var(--accent); 
+    margin-bottom: 40px; 
+    padding-left: 20px; 
+    letter-spacing: 1px;
+}
+
+.menu-item { 
+    display: block; 
+    padding: 15px 20px; 
+    color: var(--text-light); 
+    text-decoration: none; 
+    border-radius: 12px; 
+    margin-bottom: 10px; 
+    transition: all 0.3s ease; 
+    font-weight: 500;
+}
+
+.menu-item:hover, .menu-item.active {
+    background: rgba(76, 201, 240, 0.1);
+    color: var(--accent);
+}
+
+/* 5. Main Content Area */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 40px;
+    min-height: 100vh;
+}
+
+/* 6. Helper Classes (للتنظيف ومنع التكرار) */
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.text-muted { color: var(--text-light); }
+
+.save-btn {
+    background-color: var(--save-btn-bg);
+    color: var(--save-btn-text);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}

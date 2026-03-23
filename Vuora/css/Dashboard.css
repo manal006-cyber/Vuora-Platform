@@ -1,0 +1,106 @@
+/* Dashboard Specific Styles 
+   This file manages the grid and internal cards of the Overview page.
+*/
+
+/* 1. Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* 2. Stat Cards */
+.stat-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.card-label { 
+    font-size: 13px; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px; 
+    color: var(--text-light);
+}
+
+.card-value { 
+    color: var(--text-dark); 
+    font-size: 32px; 
+    font-weight: 700; 
+    margin: 15px 0; 
+}
+
+.status { 
+    font-size: 13px; 
+    font-weight: 600; 
+}
+
+/* 3. Revenue Chart Section */
+.chart-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--card-border);
+    height: 450px;
+}
+
+.chart-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.canvas-wrapper {
+    height: 300px;
+    width: 100%;
+}
+
+/* Helper Classes used in Dashboard */
+.text-success { color: #10B981; }
+.text-danger { color: #EF4444; }
+.text-muted { color: var(--text-light); }
+
+
+/* 1. إضافة مسافة احترافية بين العنوان والبطاقات */
+.page-header {
+    margin-bottom: 60px !important; /* لدفع كل ما هو أسفل العنوان للأسفل */
+}
+
+/* 2. ضبط شبكة البطاقات لضمان عدم التداخل */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* 3. إصلاح حاوية الرسم البياني لتبقى ثابتة */
+.chart-container {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid var(--card-border);
+    height: 450px; /* ارتفاع ثابت يضمن عدم تضرر الرسم */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* 4. ضمان تمدد الرسم البياني بشكل صحيح داخل المساحة الجديدة */
+.canvas-wrapper {
+    flex-grow: 1;
+    min-height: 300px;
+    width: 100%;
+}

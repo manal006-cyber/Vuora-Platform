@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuora | Financial Wallet</title>
+    <link rel="stylesheet" href="css/Vuora.css">
+    <link rel="stylesheet" href="css/Wallet.css">
+    
+    <script>
+        (function() {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-logo">VUORA</div>
+        <nav class="menu">
+            <a href="Vuora_Dashboard.html" class="menu-item">Overview</a>
+            <a href="Vuora_Projects.html" class="menu-item">Projects</a>
+            <a href="Vuora_Invoices.html" class="menu-item">Invoices</a>
+            <a href="#" class="menu-item active">Wallet</a>
+            <a href="Vuora_Settings.html" class="menu-item">Settings</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="wallet-header">
+            <h1 class="page-title">Financial Wallet</h1>
+            <button class="btn-primary-glow" onclick="toggleWithdrawModal(true)">Withdraw Funds</button>
+        </header>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <label class="stat-label">Total Revenue</label>
+                <span class="stat-amount">$24,500.00</span>
+            </div>
+            <div class="stat-card">
+                <label class="stat-label">Pending Payments</label>
+                <span class="stat-amount status-pending">$8,200.00</span>
+            </div>
+            <div class="stat-card">
+                <label class="stat-label">Available Balance</label>
+                <span class="stat-amount status-accent">$16,300.00</span>
+            </div>
+        </section>
+
+        <div class="wallet-layout">
+            <section class="chart-container">
+                <h3 class="section-title">Earnings Flow</h3>
+                <div class="chart-visual">
+                    <div class="bar-group">
+                        <span class="bar-value">$1.2k</span>
+                        <div class="bar-pillar" style="height: 60px;"></div>
+                        <span class="bar-label">Jan</span>
+                    </div>
+                    <div class="bar-group">
+                        <span class="bar-value">$4.8k</span>
+                        <div class="bar-pillar" style="height: 140px;"></div>
+                        <span class="bar-label">Feb</span>
+                    </div>
+                    <div class="bar-group active">
+                        <span class="bar-value">$7.2k</span>
+                        <div class="bar-pillar" style="height: 200px;"></div>
+                        <span class="bar-label">Mar</span>
+                    </div>
+                    <div class="bar-group">
+                        <span class="bar-value">$3.1k</span>
+                        <div class="bar-pillar" style="height: 100px;"></div>
+                        <span class="bar-label">Apr</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="activity-container">
+                <h3 class="section-title">Recent Income</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-meta">
+                            <h4>Fann Ceramics</h4>
+                            <small>Mar 10, 2026</small>
+                        </div>
+                        <div class="amount-entry positive">+$2,250</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-meta">
+                            <h4>MIS Dashboard</h4>
+                            <small>Mar 05, 2026</small>
+                        </div>
+                        <div class="amount-entry positive">+$1,100</div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-meta">
+                            <h4>Jazan Coffee</h4>
+                            <small>Feb 28, 2026</small>
+                        </div>
+                        <div class="amount-entry positive">+$4,500</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="overlay-modal" id="withdrawModal">
+        <div class="modal-surface">
+            <h2 class="modal-heading">Withdraw Funds</h2>
+            <p class="modal-subtext">Transfer your available balance to your linked bank account.</p>
+            
+            <div class="form-group">
+                <label>Amount to Withdraw ($)</label>
+                <input type="number" id="withdrawAmountInput" min="100" max="16300" placeholder="Min $100">
+            </div>
+
+            <div class="form-group">
+                <label>Payout Destination</label>
+                <input type="text" value="Saudi National Bank (**** 4210)" readonly class="input-readonly">
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="toggleWithdrawModal(false)">Cancel</button>
+                <button class="btn-primary-glow" onclick="handleWithdrawal()">Confirm Payout</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleWithdrawModal(isOpen) {
+            document.getElementById('withdrawModal').style.display = isOpen ? 'flex' : 'none';
+        }
+
+        function handleWithdrawal() {
+            const amount = document.getElementById('withdrawAmountInput').value;
+            if (amount && amount >= 100) {
+                alert(`Payout initiated! $${amount} will be credited within 24 hours.`);
+                toggleWithdrawModal(false);
+            } else {
+                alert("Minimum withdrawal is $100.");
+            }
+        }
+
+        // تحريك الأعمدة عند التحميل
+        window.addEventListener('load', () => {
+            const pillars = document.querySelectorAll('.bar-pillar');
+            pillars.forEach(pillar => {
+                const targetHeight = pillar.style.height;
+                pillar.style.height = '0px';
+                setTimeout(() => {
+                    pillar.style.height = targetHeight;
+                }, 150);
+            });
+        });
+    </script>
+</body>
+</html>
