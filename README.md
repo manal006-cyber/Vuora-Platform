@@ -1,22 +1,18 @@
-Vuora Platform Project Overview
+# 🚀 Vuora | Freelance Operations Hub
 
-Vuora is a professional web application I designed and developed to help freelancers manage their business operations in one place. My goal was to create a seamless experience that combines financial management with project organization.
+**Vuora** is more than just a dashboard; it’s a strategic tool designed to bridge the gap between creative freedom and business discipline. As a freelancer, managing multiple projects while tracking financial health. Vuora simplifies this by centralizing your digital workspace into one intuitive interface.
 
-The project includes 6 main pages:
+### 🌟 Why Vuora?
+* **Data-Driven Insights:** Don't just work—track your progress. With a dynamic earnings flow (visualizing trends from Jan to Apr), you can see your financial growth at a glance.
+* **Operational Efficiency:** Managing pending, ongoing, and overdue projects shouldn't be a chore. Our real-time tracking keeps your priorities clear.
+* **Seamless Experience:** A polished authentication flow ensures that your workspace is both secure and professional from the very first click.
+* **User-Centric Design:** Built with a focus on high-readability and modern UI/UX principles to reduce cognitive load.
 
-1\. Authentication: A clean login and sign-up system with smooth transitions.
+### 🛠️ The Tech Stack
+* **Core:** Crafted with semantic **HTML5** and modern **CSS3**, utilizing **Custom Grid & Flexbox** to deliver a high-fidelity experience optimized for **Desktop environments**.
+* **Design Philosophy:** Prototyped in **Figma** with a focus on data clarity, ensuring that complex financial info remains easy to digest on large displays.
+* **Workflow:** Developed in **VS Code** and deployed via **GitHub**, maintaining clean version control.
+* **Current Status:** Optimized for larger screens (Laptops/PCs). Mobile responsiveness is currently in the planning phase for future updates.
 
-2\. Dashboard: A central hub to see the overall work status at a glance.
-
-3\. Projects: A dedicated area to organize tasks and track progress.
-
-4\. Invoices: A full system to manage payments and track if they are paid, pending, or overdue.
-
-5\. Financial Wallet: My favorite part, which shows the available balance and a visual chart of the earnings flow. It also allows users to easily withdraw their funds directly from the page.
-
-6\. Settings: A place to manage account details and user preferences.
-
-I built this using HTML, CSS, and JavaScript, focusing on making the code clean and well-structured. As an MIS graduate, I wanted to bridge the gap between business needs and technical solutions through this project.
-
-Developed by Manal Khalid.
-
+### 📈 The MIS Perspective
+In the world of **Information Systems**, the goal is to transform raw data into actionable information. **Vuora** embodies this by integrating financial operations with project management. By automating invoice tracking and project statuses, it reduces the "administrative tax" on freelancers, allowing them to focus on what they do best while making smarter, data-backed financial decisions.
