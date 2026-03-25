@@ -115,11 +115,9 @@
     </div>
 
     <script>
-        /**
-         * UI Logic & Handlers
-         */
         
-        // Toggle Modal Visibility
+         
+        
         function toggleModal(id, show) {
             const modal = document.getElementById(id);
             modal.style.display = show ? 'flex' : 'none';
@@ -128,7 +126,6 @@
             }
         }
 
-        // Add New Invoice to Table
         function processNewInvoice() {
             const client = document.getElementById('clientNameInput').value;
             const amount = document.getElementById('amountInput').value;
@@ -169,13 +166,10 @@
             document.getElementById('amountInput').value = "";
         }
 
-        // Filter Logic
         function handleFilter(status, btn) {
-            // Update Active Button
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            // Filter Rows
             document.querySelectorAll('.invoice-row').forEach(row => {
                 const rowStatus = row.getAttribute('data-status');
                 row.style.display = (status === 'all' || rowStatus === status) ? '' : 'none';
