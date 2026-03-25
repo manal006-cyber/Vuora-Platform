@@ -101,13 +101,11 @@
     <script>
         const toggle = document.getElementById('darkModeToggle');
         
-        // Initial Theme Check
         if (localStorage.getItem('theme') === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             toggle.checked = true;
         }
 
-        // Theme Toggle Handler
         toggle.addEventListener('change', () => {
             if (toggle.checked) {
                 document.documentElement.setAttribute('data-theme', 'dark');
