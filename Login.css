@@ -22,7 +22,7 @@
 body {
     margin: 0; 
     font-family: 'Inter', sans-serif; 
-    background-color: var(--bg-color) !important; /* ضمان اللون الأصلي */
+    background-color: var(--bg-color) !important; 
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -34,7 +34,6 @@ body {
 
 .login-container { width: 100%; max-width: 420px; padding: 20px; transition: 0.5s ease; }
 
-/* تأثير التلاشي عند التبديل */
 .fade-in { animation: fadeIn 0.5s forwards; }
 @keyframes fadeIn { 
     from { opacity: 0; transform: translateY(10px); } 
@@ -85,18 +84,16 @@ h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px
     transition: 0.3s;
 }
 
-/* لون النص عند التركيز لضمان الوضوح */
 .input-group input:focus { 
     border-color: var(--accent); 
     box-shadow: 0 0 0 4px rgba(76, 201, 240, 0.1); 
     background: var(--card-bg);
 }
 
-/* زر Sign In - لون غامق وواضح */
 .primary-btn {
     width: 100%; 
     padding: 14px; 
-    background: #111827; /* اللون الأسود الأصلي */
+    background: #111827;
     color: #FFFFFF; 
     border: none; 
     border-radius: 12px; 
@@ -113,7 +110,6 @@ h2 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 8px
 
 .primary-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-/* زر جوجل */
 .google-btn {
     width: 100%; 
     padding: 12px; 
