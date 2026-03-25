@@ -51,7 +51,6 @@
 
 .btn-cancel:hover { opacity: 0.85; }
 
-/* بطاقات الإحصائيات المالية */
 .stats-grid { 
     display: grid; 
     grid-template-columns: repeat(3, 1fr); 
